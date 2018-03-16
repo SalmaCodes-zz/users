@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>User New</title>
+</head>
+<body>
+    <h1>Add a new user</h1>
+
+    <form action="/users/create" method="post">
+        <p>First name:</p>
+        <input type="text" name="first_name" id="first_name">
+        <p>Last name:</p>
+        <input type="text" name="last_name" id="last_name">
+        <p>Email:</p>
+        <input type="text" name="email" id="email">
+        <input type="submit" value="Create">
+    </form>
+    
+    <div class="bottom-links">
+        <a href="/users">Go Back</a>
+    </div>
+</body>
+</html>

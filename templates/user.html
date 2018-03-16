@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>User {{user.id}}</title>
+</head>
+<body>
+    <h1>User {{user.id}}</h1>
+    <p>Name: {{user.name}}</p>
+    <p>Email: {{user.email}}</p>
+    <p>Created at {{user.time}}</p>
+
+    <div class="bottom-links">
+        <a href="/users">Go Back</a> |
+        <a href="/users/{{user.id}}/edit">Edit</a> |
+        <a href="/users/{{user.id}}/destroy">Delete</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>Users</title>
+</head>
+<body>
+    <h1>Users</h1>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>Full Name</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th>Actions</th>
+        </tr>
+        {% for user in all_users: %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td><a href="/users/{{user.id}}">{{user.name}}</a></td>
+            <td>{{user.email}}</td>
+            <td>{{user.time}}</td>
+            <td>{{user.updated_time}}</td>
+            <td>
+                <a href="/users/{{user.id}}">Show</a>
+                <a href="/users/{{user.id}}/edit">Edit</a>
+                <a href="/users/{{user.id}}/destroy">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    <div class="bottom-links">
+        <a href="/users/new">Add a new user</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <title>User Edit {{user_id}}</title>
+</head>
+<body>
+    <h1>Edit User {{user_id}}</h1>
+    <form action="/users/{{user_id}}" method="post">
+        <p>First name:</p>
+        <input type="text" name="first_name" id="first_name">
+        <p>Last name:</p>
+        <input type="text" name="last_name" id="last_name">
+        <p>Email:</p>
+        <input type="text" name="email" id="email">
+        <input type="submit" value="Update">
+    </form>
+    
+    <div class="bottom-links">
+        <a href="/users/{{user_id}}">Show</a> |
+        <a href="/users">Go Back</a>
+    </div>
+</body>
+</html>
